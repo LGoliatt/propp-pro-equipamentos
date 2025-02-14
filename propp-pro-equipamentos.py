@@ -33,5 +33,7 @@ df_all = df_all[df_all['Preço unitário'].notna()]
 
 df_all.to_excel('propp-pro-equipamentos-todos.xlsx', index=False)
 # filtros
-df_all = df_all[df_all["Preço unitário"] >= 10000]
+# -- itens com valor unitário menor que 8k serão comprados pelas unidades
+df_all = df_all[df_all["Preço unitário"] >= 8000]
+
 df_all.to_excel('propp-pro-equipamentos-filtrado.xlsx', index=False)
